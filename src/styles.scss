@@ -1,1 +1,183 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables to change the theme */
+:root {
+    --theme-color-1: #d83a00;
+    --theme-color-2: #ffe100;
+    --theme-color-3: whitesmoke;
+    --theme-color-4: gainsboro;
+    --theme-fonts : 'Raleway', 'Trebuchet MS', Arial, sans-serif;
+    --theme-font-color-1: whitesmoke;
+    --theme-font-color-2: rgb(100, 100, 100);
+}
+
+router-outlet {
+    display: none;
+}
+
+html, body { margin: 0; height: 100%;}
+
+/* All texts */
+html {
+    font-family: var(--theme-fonts);
+    margin: 0;
+    background-color: #000;
+}
+
+/* Titles */
+h1, h2, h3, h5 {
+    color: var(--theme-font-color-1);
+    margin: 12px;
+}
+
+h1, h2 {
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+h3 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Key words */
+h4 {
+    color: var(--theme-font-color-2);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Texts */
+h6 {
+    color: var(--theme-font-color-2);
+}
+
+/* Sizes */
+h1 {
+    text-align: center;
+    font-size: 12vw;
+}
+
+h2 {
+    font-size: 250%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+h5 {
+    font-size: 100%;
+}
+
+h6 {
+    font-size: 80%;
+}
+
+/* Tables */
+table{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    margin-top: 0%;
+}
+
+/* Class */
+/* To represents in the same line */
+.inline {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.subtitle {
+    margin-left: 42px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.second-color-text {
+    color: var(--theme-font-color-2);
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+div.spacer{
+    flex: auto;
+}
+
+.topright{
+    position: fixed;
+    top: 0;
+    right:0;
+    margin:12px;
+}
+
+.topleft{
+    position: fixed;
+    top: 0;
+    left:0;
+    margin:12px;
+}
+
+.error-snackbar{
+    background-color: red;
+}
+
+.good-snackbar{
+    background-color: green;
+}
+
+.error-snackbar .mat-simple-snackbar .good-snackbar{
+    justify-content: center !important;
+    font-weight: bold;
+}
+
+.mat-red {
+    background-color: red;
+}
+
+input, button {
+    border-radius: 8px;
+}
+
+input {
+    background: var(--theme-color-4);
+    font-size: 90%;
+}
+
+input:focus{
+    outline: solid 1px var(--theme-color-1);
+}
+
+button{
+    border: 1px solid black;
+    background-color: var(--theme-color-1);
+    color: var(--theme-font-color-1);
+    font-size: 100%;
+    padding: 6px 12px;
+}
+
+button:hover{
+    transition: 0.4s background-color;
+    background-color: var(--theme-color-2);
+    cursor: pointer;
+}
+
+button:active{
+    transform: translateY(4px);
+}
+
+.mat-dialog-container{
+    background: linear-gradient(0deg, var(--theme-color-1) 0%, var(--theme-color-2) 100%);
+}
+
+.card{
+    background: var(--theme-color-3);
+}
