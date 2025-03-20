@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PremierMai2025": {
+    "premiermai2025": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PremierMai2025:build:production"
+              "buildTarget": "premiermai2025:build:production"
             },
             "development": {
-              "buildTarget": "PremierMai2025:build:development"
+              "buildTarget": "premiermai2025:build:development"
             }
           },
           "defaultConfiguration": "development"
