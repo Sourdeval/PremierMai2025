@@ -1,7 +1,9 @@
 <div class="message" *ngFor="let item of items$ | async;">
     <h5>{{item.author}}: {{item.message}}</h5>
 </div>
+<div style="display: flex;">
+    <h5>Prénom</h5><input style="width: 20%;" type="text" [formControl]="authorMessageToPost">
+    <h5>Message</h5><input style="width: 70%;" type="text" [formControl]="messageToPost">
+    <button (click)="sendMessage()" style="width: 10%;" [disabled]="!authorMessageToPost.valid || !messageToPost.valid" [ngStyle]="{ 'background-color': !authorMessageToPost.valid || !messageToPost.valid ? 'gray' : '' }">></button>
+</div>
 
-<h5>Prénom</h5><input type="text" [formControl]="authorMessageToPost" required>
-<h5>Message</h5><input type="text" [formControl]="messageToPost" required>
-<button (click)="sendMessage()">></button>

@@ -10,9 +10,10 @@ export class AppComponent {
   title = 'PremierMai2025';
 
   chatTabs = [
+    'Organisation',
     'Musique',
     'Activités',
-    "Blabla"
+    'Blabla',
   ]
 
   selectedTab = this.chatTabs[0];

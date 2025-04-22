@@ -2,7 +2,7 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Message } from '../model/message.model';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'pre-mai25-chat',
@@ -25,8 +25,8 @@ export class ChatComponent {
   firestore: Firestore = inject(Firestore);
   items$?: Observable<Message[]>;
 
-  authorMessageToPost = new FormControl('');
-  messageToPost = new FormControl('');
+  authorMessageToPost = new FormControl('', Validators.required);
+  messageToPost = new FormControl('', Validators.required);
 
   constructor() {
     this.refreshMessageCollection();
