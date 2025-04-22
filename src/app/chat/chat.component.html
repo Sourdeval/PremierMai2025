@@ -1,5 +1,5 @@
 <div class="message" *ngFor="let item of items$ | async;">
-    <h5>{{item.author}}: {{item.message}}</h5>
+    <h5><span [ngStyle]="{'color': getAuthorColor(item.author)}">{{item.author}}</span>: {{item.message}}</h5>
 </div>
 <div style="display: flex;">
     <h5>Prénom</h5><input style="width: 20%;" type="text" [formControl]="authorMessageToPost">

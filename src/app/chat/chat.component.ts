@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Message } from '../model/message.model';
@@ -12,6 +12,9 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ChatComponent {
   _chatCollection = "Musique";
+  colorList = ["aqua","coral","cornflowerblue","crimson","darkorange","darkorchid","darksalmon","darkseagreen","deeppink","deepskyblue","forestgreen","fuchsia","gold",
+    "greenyellow","hotpink","lightgreen","lightseagreen","lime","orange","orangered","orchid","palegoldenrod","paleturquoise","plum","purple","rebeccapurple","red","royalblue","saddlebrown",
+    "salmon","seagreen","skyblue","slateblue","springgreen","steelblue","tomato","turquoise","violet","yellow","yellowgreen"];
 
   @Input() set chatCollection(value: string){
     this._chatCollection = value;
@@ -44,5 +47,14 @@ export class ChatComponent {
         this.authorMessageToPost.setValue('');
         this.messageToPost.setValue('');
       })
+  }
+
+  getAuthorColor(authorName: string): string {
+    let sumChar = 19;
+    for (let i = 0; i<authorName.length; i++) {
+      sumChar += authorName.charCodeAt(i);
+    }
+    sumChar %= this.colorList.length;
+    return this.colorList.at(sumChar) ?? 'red';
   }
 }
