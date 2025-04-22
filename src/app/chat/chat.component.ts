@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Message } from '../model/message.model';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -36,14 +36,20 @@ export class ChatComponent {
   }
 
   refreshMessageCollection(){
-    const aCollection = collection(this.firestore, this.chatCollection)
-    this.items$ = collectionData(aCollection) as Observable<Message[]>;
+    const aCollection = collection(this.firestore, this.chatCollection);
+    this.items$ = (collectionData(aCollection) as Observable<Message[]>)
+      .pipe(map(messages => messages.sort((m1, m2) => m1.timestamp - m2.timestamp)));
   }
 
   sendMessage() {
     const aCollection = collection(this.firestore, this.chatCollection)
     addDoc(aCollection,
-      <Message> { author: this.authorMessageToPost.value, message: this.messageToPost.value }).then(() => {
+      <Message>
+      { 
+        author: this.authorMessageToPost.value,
+        message: this.messageToPost.value,
+        timestamp: new Date().getTime()
+      }).then(() => {
         this.authorMessageToPost.setValue('');
         this.messageToPost.setValue('');
       })
