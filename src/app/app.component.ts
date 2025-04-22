@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PremierMai2025';
+
+  chatTabs = [
+    'Musique',
+    'Activités',
+    "Blabla"
+  ]
+
+  selectedTab = this.chatTabs[0];
 }

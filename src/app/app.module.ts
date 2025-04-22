@@ -7,6 +7,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { firebaseCredentials } from './firebaseCredentials';
 import { ChatComponent } from './chat/chat.component';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ChatComponent } from './chat/chat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideFirebaseApp(() => initializeApp(

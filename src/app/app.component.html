@@ -34,6 +34,9 @@
     <h2>...</h2>
     <h2 style="color: red;">[REVENIR PLUS TARD]</h2>
 
+    <button *ngFor="let tabName of chatTabs" (click)="selectedTab=tabName" [ngStyle]="{ 'background-color': this.selectedTab == tabName ? 'red' : 'orange'}">{{tabName}}</button>
+    <pre-mai25-chat [chatCollection]="selectedTab"></pre-mai25-chat>
+
     <div>
       <h6>Site créé par Sourdeval</h6>
     </div>

@@ -1,1 +1,7 @@
-<h5>chat works!</h5>
+<div class="message" *ngFor="let item of items$ | async;">
+    <h5>{{item.author}}: {{item.message}}</h5>
+</div>
+
+<h5>Prénom</h5><input type="text" [formControl]="authorMessageToPost" required>
+<h5>Message</h5><input type="text" [formControl]="messageToPost" required>
+<button (click)="sendMessage()">></button>
