@@ -32,7 +32,9 @@
     <h2>Et spécialement cette année,</h2>
     <h2>car c'est le 10e Premier Mai 😱</h2>
     <h2>...</h2>
-    <h2 style="color: red;">[REVENIR PLUS TARD]</h2>
+    <h2 style="color: red;">VOUS</h2>
+    <h2>Choisissez ce qui va se passer !</h2>
+    <h3>Balancez vos idées par message dans les différentes catégories ci-dessous !</h3>
 
     <button *ngFor="let tabName of chatTabs" (click)="selectedTab=tabName" [ngStyle]="{ 'background-color': this.selectedTab == tabName ? 'red' : 'orange'}">{{tabName}}</button>
     <pre-mai25-chat [chatCollection]="selectedTab"></pre-mai25-chat>

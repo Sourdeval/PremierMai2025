@@ -56,6 +56,8 @@ export class ChatComponent {
   }
 
   getAuthorColor(authorName: string): string {
+    if (authorName == "Jerem") return "gold";
+    if (authorName == "Vicky") return "royalblue";
     let sumChar = 19;
     for (let i = 0; i<authorName.length; i++) {
       sumChar += authorName.charCodeAt(i);
